@@ -1,0 +1,99 @@
+<?php
+//共通関数・関数ファイル読み込み
+require('function.php');
+
+debug('================================');
+debug('トップページ index.php');
+debug('================================');
+debugLogStart();
+
+//================================
+// 画面処理
+//================================
+//ページデータ(現在のページ、データがなければ1ページとする)
+$currentPageNum = (!empty($_GET['p'])) ? $_GET['p'] : 1;
+//ソート順
+$sort = (!empty($_GET['sort'])) ? $_GET['sort'] : '';
+//検索ワード
+$searchWord = (!empty($_GET['search-word'])) ? sanitize($_GET['search-word']) : '';
+debug('現在のページ：'.print_r($currentPageNum,true));
+
+
+//表示件数
+$showNum = 20;
+//先頭の絵が全体の何番目か
+$headNum = ($currentPageNum -1) * $showNum;
+//表示順
+switch ($sort) {
+  case 'date':
+    $sort = 1;
+    break;
+  case 'bookmark':
+    $sort = 2;
+    break;
+  case 'look':
+    $sort = 3;
+    break;
+}
+//DBからページ内で表示するデータと総レコード数、総ページ数を取得
+$dbIllustData = getIllustList($headNum, $sort, $showNum, $searchWord, 0);
+
+debug('画面表示処理終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
+?>
+
+<?php 
+$siteTitle = 'イラストレーター　トップ画面';
+require('head.php');
+?>
+
+<body>
+  <?php
+  require('header.php');
+  ?>
+  <div class="top-pic">
+    <form action="" method="post" class="order">
+    <ul class="order_select">
+      <li>
+        <a href="index.php?sort=date<?php if(!empty($searchWord)) echo ('&search-word=' .$searchWord); ?>" class="<?php echo getCurrentSort($sort); ?>">投稿順</a>
+      </li>
+      <li>
+        <a href="index.php?sort=bookmark<?php if(!empty($searchWord)) echo ('&search-word=' .$searchWord); ?>" class="<?php if($sort === 2) echo 'current' ?>">人気順</a>
+      </li>
+<!--
+      <li>
+        <a href="index.php?sort=look<?php if(!empty($searchWord)) echo ('$search-word=' .$searchWord); ?>" class="<?php if($sort === 3) echo 'current'; ?>">閲覧数順</a>
+      </li>
+-->
+    </ul>
+      <?php 
+      $totalPage = (!empty($searchWord)) ? $dbIllustData['search_total_page'] : $dbIllustData['total_page'];
+      $totalNumber = (!empty($searchWord)) ? $dbIllustData['search_total'] : $dbIllustData['total'];
+      pagination($currentPageNum, $totalPage, sanitize($sort), sanitize($searchWord), 0); ?>
+    </form>
+    <div class="new-pic-container">
+      <div class="search"><?php echo ((!empty($dbIllustData['data'])) ? $headNum +1 : 0); ?>-<?php echo $headNum + count($dbIllustData['data']); ?> /<span><?php echo $totalNumber; ?></span>件</div>
+      <div class="new-pic">
+        <?php 
+          foreach ( $dbIllustData['data'] as $key => $value):
+        ?>
+        <div class="picture">
+          <a href="illustDetail.php<?php echo (!empty(appendGetParam())) ? appendGetParam() . '&i_id=' .$value['id'] : '?i_id='.$value['id']; ?>"><img src="<?php echo sanitize($value['pic']); ?>"></a>
+          <div class="pic-info">
+            <div><a href="illustDetail.php<?php echo (!empty(appendGetParam())) ? appendGetParam() . '&i_id=' .$value['id'] : '?i_id='.$value['id']; ?>" class="pic-title"><span><?php echo sanitize($value['title']); ?></span></a></div>
+            <div><a href="illustDetail.php<?php echo (!empty(appendGetParam())) ? appendGetParam() . '&i_id=' .$value['id'] : '?i_id='.$value['id']; ?>" class="author"><span><?php echo sanitize($value['username']); ?></span></a></div>
+          </div>
+        </div>
+        <?php 
+          endforeach;
+        ?>
+      </div>
+    </div>
+    <?php 
+    $totalPage = (!empty($searchWord)) ? $dbIllustData['search_total_page'] : $dbIllustData['total_page'];
+    $totalNumber = (!empty($searchWord)) ? $dbIllustData['search_total'] : $dbIllustData['total'];
+    pagination($currentPageNum, $totalPage, sanitize($sort), sanitize($searchWord), 0); ?>
+  </div>
+
+  <?php
+    require('footer.php');
+  ?>
