@@ -3,10 +3,10 @@
 ![スクリーンショット-2019-12-11-22 48 23](https://user-images.githubusercontent.com/48384384/71505061-34ec7e00-28bf-11ea-9dac-12ed6f175bff.png)
 
 # Dependency
-使用言語: HTML, CSS, jQuery, PHP(Version 7.3.7),MySQL
+使用言語: HTML, CSS, jQuery, PHP(Version 7.3.7), MySQL
 
 # Setup
-MAMPを導入し、ローカル環境にて各ファイルをhtdocsファイルに配置すれば動作可能です。
+MAMPを導入し、ローカル環境にて各ファイルをhtdocsファイルに配置すれば動作可能です。(要MAC)
 
 # Usage
 ・新規会員登録機能
