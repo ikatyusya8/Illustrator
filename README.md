@@ -10,6 +10,7 @@ MAMPを導入し、ローカル環境にて各ファイルをhtdocsファイル�
 
 # Usage
 ![1 新規会員登録](https://user-images.githubusercontent.com/48384384/71536929-767d3780-2958-11ea-8542-02eac5b50476.gif)
+
 ・新規会員登録機能
 名前、email、パスワード、パスワードの再入力欄を入力し、DBに登録します。
 
