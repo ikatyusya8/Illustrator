@@ -4,7 +4,7 @@
 <br>
 
 # Dependency
-HTML、CSS、jQuery、PHP(Version 7.3.7)、MySQL
+HTML、CSS、javascript(jQuery、ajax)、PHP(Version 7.3.7)、MySQL
 
 # Setup
 MAMPを導入し、ローカル環境にて各ファイルをhtdocsファイルに配置。(MacOS)
