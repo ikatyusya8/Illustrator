@@ -103,6 +103,9 @@ require('head.php');
   require('header.php');
   ?>
 
+  <p id="js-show-msg" style="display:none;" class="msg-complete">
+    <?php echo getSessionFlash('msg_success'); ?>
+  </p>
   <div class="login">
     <div class="login-title">ログイン</div>
     <form action="" method="post">
@@ -127,8 +130,6 @@ require('head.php');
       </div>
     </form>
   </div>
-
-
 
   <?php
   require('footer.php');
