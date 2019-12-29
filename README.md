@@ -1,6 +1,7 @@
 # Illustrator
 イラストを投稿し、評価することができる自作webサービスです。
 ![スクリーンショット-2019-12-11-22 48 23](https://user-images.githubusercontent.com/48384384/71505061-34ec7e00-28bf-11ea-9dac-12ed6f175bff.png)
+<br>
 
 # Dependency
 HTML、CSS、jQuery、PHP(Version 7.3.7)、MySQL
@@ -27,8 +28,6 @@ DBにはMySQLを使用。
 ・パスワード再入力の最大文字数(255文字)  
 ・パスワード再入力の最小文字数(6文字)  
 ・パスワードとパスワード再入力が同値か  
-
-
 
 **・プロフィール情報変更機能**
 
