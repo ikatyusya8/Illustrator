@@ -11,7 +11,7 @@ MAMPを導入し、ローカル環境にて各ファイルをhtdocsファイル�
 DBにはMySQLを使用。
 
 # Usage
-**・新規会員登録機能**
+## ・新規会員登録機能
 
 ![1 新規会員登録](https://user-images.githubusercontent.com/48384384/71536929-767d3780-2958-11ea-8542-02eac5b50476.gif)
 
