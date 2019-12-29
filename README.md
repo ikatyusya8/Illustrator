@@ -3,7 +3,7 @@
 ![スクリーンショット-2019-12-11-22 48 23](https://user-images.githubusercontent.com/48384384/71505061-34ec7e00-28bf-11ea-9dac-12ed6f175bff.png)
 
 # Dependency
-HTML, CSS, jQuery, PHP(Version 7.3.7), MySQL
+HTML、CSS、jQuery、PHP(Version 7.3.7)、MySQL
 
 # Setup
 MAMPを導入し、ローカル環境にて各ファイルをhtdocsファイルに配置すれば動作可能です。(要MacOS)
@@ -43,6 +43,10 @@ DBに登録されているプロフィール情報を変更します。
 ・Emailの未入力
 ・コメントの最大文字数(255文字)  
 
+登録後のプロフィール情報は作品ページの作者情報から閲覧可能です。
+
+![5 5 プロフィール](https://user-images.githubusercontent.com/48384384/71536942-8b59cb00-2958-11ea-86a6-14a1cd56b048.gif)
+
 **・パスワード変更機能**
 
 ![3 パスワード変更](https://user-images.githubusercontent.com/48384384/71536933-7ed57280-2958-11ea-914b-7ed618631229.gif)
@@ -57,6 +61,20 @@ DBに登録されているパスワード情報を変更します。
 ・パスワード再入力の最大文字数(255文字)  
 ・パスワード再入力の最小文字数(6文字)  
 ・パスワードとパスワード再入力が同値か  
+
+**・パスワードリマインダー機能**
+
+![3 5 パスワードリマインダー](https://user-images.githubusercontent.com/48384384/71551470-e90b1780-2a2b-11ea-80dc-c5ba45c425cd.gif)
+
+DBに登録されているメールアドレスを入力することでパスワードを再登録できる機能です。
+
+**・ログアウト機能**
+
+![4 パス変更後ログアウト](https://user-images.githubusercontent.com/48384384/71536941-8b59cb00-2958-11ea-97b1-99c6b256b2d0.gif)
+
+現在ログインしているアカウントをログアウトします。
+
+
 
 # Authors
 Takayoshi
