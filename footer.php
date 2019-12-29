@@ -31,14 +31,6 @@
       window.open('profUser.php?u_id=<?php if(!empty($dbContributionData['user_id'])){ echo sanitize($dbContributionData['user_id']); } ?>', null, 'left=50%,width=840,height=720');
     });
     
-    $('.follow > a').on('click', function() {
-      window.open('follow.php', null, 'left=50%,width=600,height=720');
-    });
-    
-    $('.follower > a').on('click', function() {
-      window.open('follow.php', null, 'left=50%,width=600,height=720');
-    });
-    
     $('.profile .user-name-link').on('click', function() {
       window.open('profUser.php?u_id=<?php if(!empty($dbContributionData['user_id'])){ echo sanitize($dbContributionData['user_id']); } ?>', null, 'left=50%,width=840,height=720');
     });
