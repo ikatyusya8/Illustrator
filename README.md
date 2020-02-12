@@ -3,7 +3,7 @@
 ![スクリーンショット-2019-12-11-22 48 23](https://user-images.githubusercontent.com/48384384/71505061-34ec7e00-28bf-11ea-9dac-12ed6f175bff.png)
 
 # Dependency
-HTML、CSS、javascript(jQuery、ajax)、PHP(Version 7.3.7)、MySQL
+HTML、CSS、JavaScript(jQuery、ajax)、PHP(Version 7.3.7)、MySQL
 
 # Setup
 MAMPを導入し、ローカル環境にて各ファイルをhtdocsファイルに配置。(MacOS)
